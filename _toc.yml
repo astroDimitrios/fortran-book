@@ -2,9 +2,20 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: 01_0_Basics
+root: docs/intro
+defaults:
+  titlesonly: true
+parts:
+  - caption: Basics
+    numbered: 1
+    maxdepth: 2
+    chapters:
+    - file: docs/01_0_Basics
+      sections:
+      - file: docs/01_1_Compile
+  - caption: OOP
+    chapters:
+    - file: docs/11_OOP
+  - caption:
+    chapters:
+    - file: docs/bibliography

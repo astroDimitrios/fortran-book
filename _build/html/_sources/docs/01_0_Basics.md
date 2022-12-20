@@ -1,12 +1,8 @@
 # Fortran
 
-- [Fortran](#fortran)
-  - [Introduction](#introduction)
-  - [Declaring Kinds (Basic)](#declaring-kinds-basic)
-  - [Declaring Variables](#declaring-variables)
-  - [Block Construct](#block-construct)
-  - [Kinds / Precision](#kinds--precision)
-    - [TIPS](#tips)
+```{contents}
+:local:
+```
 
 ## Introduction
 

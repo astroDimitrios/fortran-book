@@ -1,60 +1,64 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Fortran &#8212; Fortran</title>
+    <title>1. Fortran &#8212; Introduction to Fortran</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://www.astropython.com/fortran-book/intro.html/docs/01_0_Basics.html" />
+    <link rel="shortcut icon" href="../_static/favicon-dark.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Compile" href="01_1_Compile.html" />
+    <link rel="prev" title="Introduction to Fortran" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -87,50 +91,63 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/met-office-logo-black-on-white.png" class="logo" alt="logo">
+      <img src="../_static/met-office-logo-black-on-white.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Fortran</h1>
+      <h1 class="site-logo" id="site-title">Introduction to Fortran</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown-notebooks.html">
-   Notebooks with MyST Markdown
-  </a>
- </li>
- <li class="toctree-l1 current active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   Fortran
+   1. Fortran
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_1_Compile.html">
+     Compile
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  OOP
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_OOP.html">
+   Object Orientated Programming
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   References
   </a>
  </li>
 </ul>
@@ -206,7 +223,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/astroDimitrios/fortran-book"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -223,7 +240,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_0_Basics.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/astroDimitrios/fortran-book/issues/new?title=Issue%20on%20page%20%2Fdocs/01_0_Basics.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -251,7 +268,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/01_0_Basics.md"
+        <a href="../_sources/docs/01_0_Basics.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -404,24 +421,22 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="fortran">
-<h1>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1. </span>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference external" href="#fortran">Fortran</a></p>
+<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#declaring-kinds-basic" id="id2">Declaring Kinds (Basic)</a></p></li>
+<li><p><a class="reference internal" href="#declaring-variables" id="id3">Declaring Variables</a></p></li>
+<li><p><a class="reference internal" href="#block-construct" id="id4">Block Construct</a></p></li>
+<li><p><a class="reference internal" href="#kinds-precision" id="id5">Kinds / Precision</a></p>
 <ul>
-<li><p><a class="reference external" href="#introduction">Introduction</a></p></li>
-<li><p><a class="reference external" href="#declaring-kinds-basic">Declaring Kinds (Basic)</a></p></li>
-<li><p><a class="reference external" href="#declaring-variables">Declaring Variables</a></p></li>
-<li><p><a class="reference external" href="#block-construct">Block Construct</a></p></li>
-<li><p><a class="reference external" href="#kinds--precision">Kinds / Precision</a></p>
-<ul>
-<li><p><a class="reference external" href="#tips">TIPS</a></p></li>
+<li><p><a class="reference internal" href="#tips" id="id6">TIPS</a></p></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+</div>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id1">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Strongly typed. Basic program:</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">test</span><span class="w"></span>
 <span class="k">end program </span><span class="n">test</span><span class="w"></span>
@@ -453,7 +468,7 @@ Stops i-m used as integers, the compiler doesn’t imply the type of a variable.
 <p>Use <code class="docutils literal notranslate"><span class="pre">.f90</span></code> to denote free-form Fortran. Use <code class="docutils literal notranslate"><span class="pre">.F90</span></code> if the file needs <a class="reference external" href="https://fortranwiki.org/fortran/show/File+extensions">preprocessing</a>.</p>
 </section>
 <section id="declaring-kinds-basic">
-<h2>Declaring Kinds (Basic)<a class="headerlink" href="#declaring-kinds-basic" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id2">Declaring Kinds (Basic)</a><a class="headerlink" href="#declaring-kinds-basic" title="Permalink to this headline">#</a></h2>
 <p>Integer, real (float), character, complex, logical …</p>
 <p>Examples:</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="w"></span>
@@ -472,7 +487,7 @@ Stops i-m used as integers, the compiler doesn’t imply the type of a variable.
 </div>
 </section>
 <section id="declaring-variables">
-<h2>Declaring Variables<a class="headerlink" href="#declaring-variables" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id3">Declaring Variables</a><a class="headerlink" href="#declaring-variables" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">::</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">2,</span> <span class="pre">j</span></code></p>
 <p>Fixed value (unchangeable)<br />
 <code class="docutils literal notranslate"><span class="pre">integer,</span> <span class="pre">parameter</span> <span class="pre">::</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">2</span></code></p>
@@ -488,7 +503,7 @@ Stops i-m used as integers, the compiler doesn’t imply the type of a variable.
 </ul>
 </section>
 <section id="block-construct">
-<h2>Block Construct<a class="headerlink" href="#block-construct" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id4">Block Construct</a><a class="headerlink" href="#block-construct" title="Permalink to this headline">#</a></h2>
 <p>Provides local scope to declare variables in, can access vars in parent scope.</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">integer </span><span class="n">i</span><span class="w"></span>
 <span class="n">inner</span><span class="p">:</span><span class="w"> </span><span class="k">block</span>
@@ -501,7 +516,7 @@ Stops i-m used as integers, the compiler doesn’t imply the type of a variable.
 Can use <code class="docutils literal notranslate"><span class="pre">exit</span> <span class="pre">&lt;name&gt;</span></code> within a block.</p>
 </section>
 <section id="kinds-precision">
-<h2>Kinds / Precision<a class="headerlink" href="#kinds-precision" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id5">Kinds / Precision</a><a class="headerlink" href="#kinds-precision" title="Permalink to this headline">#</a></h2>
 <p><em><strong>Default precision</strong></em> for real is usually <em><strong>single</strong></em>.</p>
 <ul class="simple">
 <li><p>Avoid using compiler flags to set default precision, use kinds.</p></li>
@@ -551,7 +566,7 @@ Can use <code class="docutils literal notranslate"><span class="pre">exit</span>
 </div>
 <p><strong>NOTE:</strong> <code class="docutils literal notranslate"><span class="pre">REAL*8</span></code> (byte units) are supported but NOT standard-conforming (lrz course).</p>
 <section id="tips">
-<h3>TIPS<a class="headerlink" href="#tips" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id6">TIPS</a><a class="headerlink" href="#tips" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>AVOID - Converting from higher to lower precision type</p></li>
 <li><p>DO - Assign high precision constants</p></li>
@@ -584,6 +599,8 @@ Can use <code class="docutils literal notranslate"><span class="pre">exit</span>
 </ul>
 </section>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -599,7 +616,7 @@ Can use <code class="docutils literal notranslate"><span class="pre">exit</span>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./docs"
         },
         predefinedOutput: true
     }
@@ -613,12 +630,19 @@ Can use <code class="docutils literal notranslate"><span class="pre">exit</span>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="markdown-notebooks.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Notebooks with MyST Markdown</p>
+            <p class="prev-next-title">Introduction to Fortran</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="01_1_Compile.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Compile</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
@@ -629,7 +653,12 @@ Can use <code class="docutils literal notranslate"><span class="pre">exit</span>
   
     By Met Office<br/>
   
-      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <p>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+</p>
+
+    </div>
 </p>
         </footer>
     </div>
@@ -641,7 +670,7 @@ Can use <code class="docutils literal notranslate"><span class="pre">exit</span>
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>
