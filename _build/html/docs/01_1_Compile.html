@@ -78,7 +78,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">Alpha - Building in Progress</div>
 <div class="header header-item noprint"></div>
 
     
@@ -394,7 +394,18 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="compile">
-<h1>Compile<a class="headerlink" href="#compile" title="Permalink to this headline">#</a></h1>
+<h1><a class="toc-backref" href="#id1">Compile</a><a class="headerlink" href="#compile" title="Permalink to this headline">#</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#compile" id="id1">Compile</a></p>
+<ul>
+<li><p><a class="reference internal" href="#extra-options" id="id2">Extra Options</a></p></li>
+<li><p><a class="reference internal" href="#floating-point-exception-handling" id="id3">Floating Point Exception Handling</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
 <p>For compiling function modules and libraries see <em><strong><span class="xref myst">06_1_Func_Modules.md</span></strong></em>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">gfortran</span> <span class="pre">-o</span> <span class="pre">myprogram</span> <span class="pre">myprogram.f</span></code><br />
 <code class="docutils literal notranslate"><span class="pre">./myprogram</span></code></p>
@@ -402,7 +413,7 @@ title="Print to PDF"
 <p>Requires <code class="docutils literal notranslate"><span class="pre">.f90</span></code> ext to use ifort<br />
 <code class="docutils literal notranslate"><span class="pre">ifort</span> <span class="pre">-o</span> <span class="pre">ex3</span> <span class="pre">ex3.f90</span></code></p>
 <section id="extra-options">
-<h2>Extra Options<a class="headerlink" href="#extra-options" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id2">Extra Options</a><a class="headerlink" href="#extra-options" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-g</span></code> flag for debug info<br />
 <code class="docutils literal notranslate"><span class="pre">-0</span></code> flag for optimisation (default normally, can be <code class="docutils literal notranslate"><span class="pre">-02</span></code> or <code class="docutils literal notranslate"><span class="pre">-03</span></code>)<br />
 Warnings for risky code:</p>
@@ -423,7 +434,7 @@ Warnings for risky code:</p>
 <p>From <a class="reference external" href="https://masuday.github.io/fortran_tutorial/compilerfeatures.html">masuday.github.io</a></p>
 </section>
 <section id="floating-point-exception-handling">
-<h2>Floating Point Exception Handling<a class="headerlink" href="#floating-point-exception-handling" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id3">Floating Point Exception Handling</a><a class="headerlink" href="#floating-point-exception-handling" title="Permalink to this headline">#</a></h2>
 <p>With <strong>IFORT</strong><br />
 Divide by zero, over/underflow etc.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">-fpen</span></code> option:</p>
@@ -487,7 +498,7 @@ Divide by zero, over/underflow etc.</p>
   
     <div class="extra_footer">
       <p>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 </p>
 
     </div>
