@@ -1,3 +1,63 @@
 p {
     text-align: justify;
 }
+
+.extra_footer {
+    display: flex;
+    justify-content: center;
+}
+
+#site-navigation .bd-sidebar__content {
+    color: white;
+    background-color: #1d1d1d;
+}
+
+#site-navigation h1.site-logo {
+    color: white;
+}
+
+.caption-text {
+    color: white;
+}
+
+#site-navigation nav ul.nav li a, #site-navigation nav ul.nav ul li a {
+    color: white;
+    transition-duration: .5s;
+}
+
+#site-navigation nav ul.nav li a:hover, #site-navigation nav ul.nav ul li a:hover {
+    color: #c4e90c;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+}
+
+#site-navigation nav ul.nav li.active > a {
+    color: #c4e90c;
+    transition-duration: .5s;
+}
+
+#site-navigation nav ul.nav li.active > a:hover {
+    color: #c4e90c;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+}
+
+.bd-sidebar label {
+    transition-duration: .5s;
+}
+
+.bd-sidebar label:hover {
+    background: #c4e90c;;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+}
+
+.bd-sidebar label:hover i, .bd-sidebar.hover i {
+    transition-duration: .5s;
+}
+
+.bd-sidebar label:hover i, .bd-sidebar.hover i {
+    color: black;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+}
