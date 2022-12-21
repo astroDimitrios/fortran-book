@@ -9,7 +9,7 @@
 <meta content="Fortran, Learn, Code, Training" name="keywords" />
 <meta content="en_UK" property="og:locale" />
 
-    <title>2. Test2Test &#8212; Introduction to Fortran</title>
+    <title>4. Program &#8212; Introduction to Fortran</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,11 +54,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://www.astropython.com/fortran-book/index.html/docs/test.html" />
+    <link rel="canonical" href="https://www.astropython.com/fortran-book/index.html/docs/program.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Testssss" href="test2test.html" />
-    <link rel="prev" title="1. Fortran" href="01_0_Basics.html" />
+    <link rel="next" title="Compile" href="01_1_Compile.html" />
+    <link rel="prev" title="3. Testssss" href="test2test.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -116,8 +116,8 @@ const thebe_selector_output = ".output, .cell_output"
    1. Fortran
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="test.html">
    2. Test2Test
   </a>
  </li>
@@ -126,11 +126,11 @@ const thebe_selector_output = ".output, .cell_output"
    3. Testssss
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="program.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    4. Program
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
@@ -226,7 +226,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/astroDimitrios/fortran-book/main?urlpath=lab/tree/docs/test.ipynb"
+        <a href="https://mybinder.org/v2/gh/astroDimitrios/fortran-book/main?urlpath=lab/tree/docs/program.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -304,7 +304,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/astroDimitrios/fortran-book/issues/new?title=Issue%20on%20page%20%2Fdocs/test.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/astroDimitrios/fortran-book/issues/new?title=Issue%20on%20page%20%2Fdocs/program.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,7 +332,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/test.ipynb"
+        <a href="../_sources/docs/program.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -381,7 +381,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Test2Test</h1>
+                <h1>Program</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -409,21 +409,21 @@ title="Print to PDF"
     },
 }
 </script>
-<script>kernelName = 'fortran'</script><section class="tex2jax_ignore mathjax_ignore" id="test2test">
-<h1><span class="section-number">2. </span>Test2Test<a class="headerlink" href="#test2test" title="Permalink to this headline">#</a></h1>
-<p>Lfortran 2</p>
+<script>kernelName = 'fortran'</script><section class="tex2jax_ignore mathjax_ignore" id="program">
+<h1><span class="section-number">4. </span>Program<a class="headerlink" href="#program" title="Permalink to this headline">#</a></h1>
+<p>Lfortran</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
-<span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">test</span><span class="w"></span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">    </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"> </span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="k">end program </span><span class="n">test</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
 </div>
-</div>
+<div class="toctree-wrapper compound">
 </div>
 </section>
 
@@ -454,17 +454,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01_0_Basics.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="test2test.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Fortran</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Testssss</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="test2test.html" title="next page">
+    <a class='right-next' id="next-link" href="01_1_Compile.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Testssss</p>
+        <p class="prev-next-title">Compile</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
