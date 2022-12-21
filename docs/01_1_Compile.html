@@ -5,8 +5,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Fortran training materials" lang="en" name="description" xml:lang="en" />
+<meta content="Fortran, Learn, Code, Training" name="keywords" />
+<meta content="en_UK" property="og:locale" />
 
-    <title>Compile &#8212; Introduction to Fortran</title>
+    <title>2. Compile &#8212; Introduction to Fortran</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Object Orientated Programming" href="11_OOP.html" />
-    <link rel="prev" title="1. Fortran" href="01_0_Basics.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="test.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -108,22 +111,15 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1">
   <a class="reference internal" href="01_0_Basics.html">
    1. Fortran
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Compile
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Compile
+  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -135,6 +131,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="11_OOP.html">
    Object Orientated Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testthis.html">
+   Cheese Ball
   </a>
  </li>
 </ul>
@@ -371,7 +372,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="compile">
-<h1>Compile<a class="headerlink" href="#compile" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2. </span>Compile<a class="headerlink" href="#compile" title="Permalink to this headline">#</a></h1>
 <p>For compiling function modules and libraries see <em><strong><span class="xref myst">06_1_Func_Modules.md</span></strong></em>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">gfortran</span> <span class="pre">-o</span> <span class="pre">myprogram</span> <span class="pre">myprogram.f</span></code><br />
 <code class="docutils literal notranslate"><span class="pre">./myprogram</span></code></p>
@@ -405,7 +406,7 @@ Warnings for risky code:</p>
 Divide by zero, over/underflow etc.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">-fpen</span></code> option:</p>
 <p><code class="docutils literal notranslate"><span class="pre">-fpe0</span></code> overflow, divide zero, invalid fp excep. Error message and abort. Underflow goes to 0.<br />
-<code class="docutils literal notranslate"><span class="pre">-fpe1</span></code> No error messages, get NaNs and +-Infs. Underflow set to zero.<br />
+<code class="docutils literal notranslate"><span class="pre">-fpe1</span></code> No error messages, get NaNs and ±Infs. Underflow set to zero.<br />
 <code class="docutils literal notranslate"><span class="pre">-fpe3</span></code> DEFAULT full exception behaviour. Underflow gradual - not necessarily 0.</p>
 <p>See <a class="reference external" href="http://astroa.physics.metu.edu.tr/MANUALS/intel_ifc/mergedProjects/bldaps_for/using_the_floating_point_exception_handling_(-fpe)_option.htm">here</a> for more and an example of these options. Better is to use the <span class="xref myst">IEEE Exceptions</span>.</p>
 <p><a class="reference external" href="https://rosettacode.org/wiki/Detect_division_by_zero#Fortran">Divide by zero check</a> rosettacode.</p>
@@ -416,8 +417,8 @@ Divide by zero, over/underflow etc.</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "astroDimitrios/fortran-book",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -439,11 +440,11 @@ Divide by zero, over/underflow etc.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01_0_Basics.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="test.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Fortran</p>
+            <p class="prev-next-title">&lt;no title&gt;</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="11_OOP.html" title="next page">
