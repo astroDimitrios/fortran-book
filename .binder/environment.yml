@@ -1,0 +1,6 @@
+name: fortran-book
+channels:
+  - conda-forge
+dependencies:
+  - jupyterlab
+  - lfortran
