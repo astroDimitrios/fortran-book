@@ -387,14 +387,19 @@ title="Print to PDF"
 {
     requestKernel: true,
     binderOptions: {
-        repo: "https://raw.githubusercontent.com/astroDimitrios/fortran-book/main/requirements.txt",
+        repo: "astroDimitrios/fortran-book",
         ref: "main",
+        repoProvider: "github",
+        binderUrl: "https://mybinder.org",
     },
     kernelOptions: {
+        name: "fortran",
         kernelName: "fortran",
+        path: ".",
     },
 }
-</script><section class="tex2jax_ignore mathjax_ignore" id="testssss">
+</script>
+<script>kernelName = 'fortran'</script><section class="tex2jax_ignore mathjax_ignore" id="testssss">
 <h1><span class="section-number">2. </span>Testssss<a class="headerlink" href="#testssss" title="Permalink to this headline">#</a></h1>
 <p>Lfortran</p>
 <div class="cell docutils container">
