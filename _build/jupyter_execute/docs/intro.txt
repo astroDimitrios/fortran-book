@@ -1,0 +1,2 @@
+integer :: x = 10
+glue("glued_text", x)
