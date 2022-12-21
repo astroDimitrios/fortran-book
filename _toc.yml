@@ -8,14 +8,16 @@ defaults:
 parts:
   - caption: Basics
     numbered: 1
-    maxdepth: 2
+    maxdepth: 3
     chapters:
     - file: docs/01_0_Basics
+    - file: docs/test
       sections:
       - file: docs/01_1_Compile
   - caption: OOP
     chapters:
     - file: docs/11_OOP
+    - file: docs/testthis
   - caption:
     chapters:
     - file: docs/bibliography

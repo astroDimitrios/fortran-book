@@ -12,6 +12,10 @@ description: >-
 execute:
   execute_notebooks: 'off'
 
+launch_buttons:
+  notebook_interface: jupyterlab
+  thebe : true
+
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
@@ -26,6 +30,30 @@ sphinx:
     language: en
     html_show_copyright: false
     bibtex_reference_style: author_year
+    myst_heading_anchors : 3
+    myst_html_meta : {
+      "description lang=en": "Fortran training materials",
+      "keywords": "Fortran, Learn, Code, Training",
+      "property=og:locale":  "en_UK"
+    }
+    myst_substitutions : {
+      "AuthDT": "I'm a **substitution**"
+    }
+    myst_enable_extensions : [
+      "amsmath",
+      "colon_fence",
+      "deflist",
+      "dollarmath",
+      # "fieldlist",
+      "html_admonition",
+      "html_image",
+      "linkify",
+      "replacements",
+      "smartquotes",
+      # "strikethrough",
+      "substitution",
+      "tasklist",
+    ]
 
 # Information about where the book exists on the web
 repository:
