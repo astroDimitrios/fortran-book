@@ -12,6 +12,8 @@ parts:
     chapters:
     - file: docs/01_0_Basics
     - file: docs/test
+    - file: docs/test2test
+    - file: docs/program
       sections:
       - file: docs/01_1_Compile
   - caption: OOP
