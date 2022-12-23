@@ -2,24 +2,49 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: docs/intro
+root: docs/intro.ipynb
 defaults:
   titlesonly: true
 parts:
-  - caption: Basics
-    numbered: 1
-    maxdepth: 3
+  - caption: Fundamentals
     chapters:
-    - file: docs/01_0_Basics
-    - file: docs/test
-    - file: docs/test2test
-    - file: docs/program
+    - file: docs/00/basics
+    - file: docs/00/style
+    - file: docs/01/inout
       sections:
-      - file: docs/01_1_Compile
+      - file: docs/01/out
+      - file: docs/01/in
+      - file: docs/01/namelist
+    - file: docs/02/arraysandloops
+      sections:
+      - file: docs/02/arrays
+      - file: docs/02/loops
+    - file: docs/03/memmanage
+      sections:
+      - file: docs/03/allocarrays
+      - file: docs/03/pointers
+  - caption: Functions and Modules
+    chapters:
+    - file: docs/04/funcsandsubs
+      sections:
+      - file: docs/04/functions
+      - file: docs/04/subroutines
+      - file: docs/04/arrayargs
+      - file: docs/04/clargs
+    - file: docs/04/modules
+    - file: docs/04/overload
+    - file: docs/04/exceptions
   - caption: OOP
     chapters:
-    - file: docs/11_OOP
-    - file: docs/testthis
+    - file: docs/05/derivedtypes
+      sections:
+      - file: docs/05/dtypes
+      - file: docs/05/pdtypes
+    - file: docs/05/oop
+  - caption: Advanced Topics
+    chapters:
+    - file: docs/06/coarray
+    - file: docs/06/doxygen
   - caption:
     chapters:
     - file: docs/bibliography

@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -55,9 +56,10 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://www.astropython.com/fortran-book/index.html/docs/intro.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Fortran" href="01_0_Basics.html" />
+    <link rel="next" title="A Basic Program" href="00/basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -94,6 +96,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Fortran</h1>
@@ -106,28 +113,23 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Basics
+  Fundamentals
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="01_0_Basics.html">
-   1. Fortran
+  <a class="reference internal" href="00/basics.html">
+   A Basic Program
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="test.html">
-   2. Test2Test
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="test2test.html">
-   3. Testssss
+  <a class="reference internal" href="00/style.html">
+   Code Style
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="program.html">
-   4. Program
+  <a class="reference internal" href="01/inout.html">
+   Input and Output
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -136,11 +138,119 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="01_1_Compile.html">
-     Compile
+    <a class="reference internal" href="01/out.html">
+     Output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01/in.html">
+     Input
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01/namelist.html">
+     Namelists
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02/arraysandloops.html">
+   Arrays and Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02/arrays.html">
+     Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02/loops.html">
+     Loops and Conditionals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03/memmanage.html">
+   Memory Management
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03/allocarrays.html">
+     Allocatable Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03/pointers.html">
+     Pointers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Functions and Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="04/funcsandsubs.html">
+   Functions and Subroutines
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04/functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04/subroutines.html">
+     Subroutines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04/arrayargs.html">
+     Arrays as Arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04/clargs.html">
+     Command Line Arguments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04/modules.html">
+   Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04/overload.html">
+   Overloading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04/exceptions.html">
+   Exceptions
+  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -149,14 +259,48 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05/derivedtypes.html">
+   User Defined Types
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05/dtypes.html">
+     Derived Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05/pdtypes.html">
+     Parameterised DTypes
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="11_OOP.html">
-   Object Orientated Programming
+  <a class="reference internal" href="05/oop.html">
+   Object Orientated Fortran
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="06/coarray.html">
+   Coarrays
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="testthis.html">
-   Cheese Ball
+  <a class="reference internal" href="06/doxygen.html">
+   Doxygen
   </a>
  </li>
 </ul>
@@ -217,6 +361,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/astroDimitrios/fortran-book/main?urlpath=lab/tree/docs/intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -284,7 +475,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/intro.md"
+        <a href="../_sources/docs/intro.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -295,7 +486,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -321,12 +512,46 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactives">
+   Interactives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-locally">
+   Working Locally
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -338,6 +563,29 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactives">
+   Interactives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-locally">
+   Working Locally
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -347,28 +595,67 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-fortran">
 <h1>Introduction to Fortran<a class="headerlink" href="#introduction-to-fortran" title="Permalink to this headline">#</a></h1>
-<p>Built with <a class="reference external" href="https://jupyterbook.org/en/stable/index.html"><img alt="Jupyter Book Logo" src="https://img.shields.io/badge/jupyter-book-orange?style=for-the-badge&amp;logo=data:image/png%3Bbase64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAMAAAAVHr4VAAAAXVBMVEX////v7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/v7+/zdybv7+/zdybv7+/v7+/zdybv7+/zdybv7+/zdyaSmqV2AAAAHXRSTlMAEBAgIDAwQEBQUGBgcHCAgJCQoLCwwMDQ4ODw8MDkUIUAAADJSURBVHjaddAFkgNBCAXQP+7uAvc/5tLFVseYF8crUB0560r/5gwvjYYm8gq8QJoyIJNwlnUH0WEnART6YSezV6c5tjOTaoKdfGXtnclFlEBEXVd8JzG4pa/LDql9Jff/ZCC/h2zSqF5bzf4vqkgNwEzeClUd8uMadLE6OnhBFsES5niQh2BOYUqZsfGdmrmbN+TMvPROHUOkde8sEs6Bnr0tDDf2Roj6fmVfubuGyttejCeLc+xFm+NLuLnJeFAyl3gS932MF/wBoukfUcwI05kAAAAASUVORK5CYII=" /></a><br />
-Inspired by <span id="id1">[<a class="reference internal" href="bibliography.html#id2" title="Katherine Holcomb. Scientific programming in fortran 2003. https://wiki.uiowa.edu/download/attachments/109785161/fortran-novella-holcomb.pdf, 2008. Accessed: 2022/12/20.">Holcomb, 2008</a>]</span>.</p>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<p>ADD MORE HELPFULL LINKS TO THIS PAGE<br />
+ADD MASTER TOC OR WEB TREE THING</p>
+<p>This book is designed to introduce you to the basics of modern <a class="reference external" href="https://fortran-lang.org/en/">Fortran</a> and good software engineering practices.
+It is heavily inspired by the work of Katherine Holcomb <span id="id1">[<a class="reference internal" href="bibliography.html#id2" title="Katherine Holcomb. Scientific programming in fortran 2003. https://wiki.uiowa.edu/download/attachments/109785161/fortran-novella-holcomb.pdf, 2008. Accessed: 2022/12/20.">Holcomb, 2008</a>]</span>.</p>
+<p>Fortran was created in 1957 by a team at IBM and excels with numerically intensive science code.
+Far from the punchcards, and fixed-form formatting of Fortrans early days, modern Fortran is fast,
+and since the Fortran 2018 update natively parallel. It is often used to write numerical code for
+High Performance Computing (HPC).</p>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
+<p>This book includes practice exercises and solutions for you to work on in each chapter. You can download a <em><strong>zip</strong></em> file containing instructions and skeleton files for the exercises <span class="xref myst">here</span>.  The first few lessons can be explored interactively or on your local machine. The next sections explain how to use the interactivity and work locally.</p>
+</section>
+<section id="interactives">
+<h2>Interactives<a class="headerlink" href="#interactives" title="Permalink to this headline">#</a></h2>
+<p>The first few lessons in this book won’t require you to have fortran installed locally. Through the power of the open-source projects Jupyter and LFortran you can run Fortran in the browser.</p>
+<p>Try it out:</p>
+<div class="admonition interactive">
+<p class="admonition-title">Interactive</p>
+<div>
+        <p>
+            This card marks an interactive section.
+            To activate interactivity for the page:
+        </p>
+        <ul>
+            <li>click on the top right <i class="fas fa-rocket"></i> icon</li>
+            <li>then click on <strong>Live Code</strong></li>
+        </ul>
+        <p>
+            You should now see a <strong style="margin: 0px">run</strong> button. Click on it!
+        </p>
+    </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;I &lt;3 Fortran&#39;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- Built with [![Jupyter Book Logo](https://img.shields.io/badge/jupyter-book-orange?style=for-the-badge&logo=data:image/png%3Bbase64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAMAAAAVHr4VAAAAXVBMVEX////v7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/zdybv7+/v7+/zdybv7+/zdybv7+/v7+/zdybv7+/zdybv7+/zdyaSmqV2AAAAHXRSTlMAEBAgIDAwQEBQUGBgcHCAgJCQoLCwwMDQ4ODw8MDkUIUAAADJSURBVHjaddAFkgNBCAXQP+7uAvc/5tLFVseYF8crUB0560r/5gwvjYYm8gq8QJoyIJNwlnUH0WEnART6YSezV6c5tjOTaoKdfGXtnclFlEBEXVd8JzG4pa/LDql9Jff/ZCC/h2zSqF5bzf4vqkgNwEzeClUd8uMadLE6OnhBFsES5niQh2BOYUqZsfGdmrmbN+TMvPROHUOkde8sEs6Bnr0tDDf2Roj6fmVfubuGyttejCeLc+xFm+NLuLnJeFAyl3gS932MF/wBoukfUcwI05kAAAAASUVORK5CYII=)](https://jupyterbook.org/en/stable/index.html)   -->
+<p>If you receive an error message trying to run a cell click on <strong style="margin: 0px">restart &amp; run all</strong> to restart the interactive Fortran kernel. Later lessons in this book aren’t interactive so you wont see the rocket icon. You will need to ensure you have a Fortran compiler installed, see Working Locally below.</p>
+</section>
+<section id="working-locally">
+<h2>Working Locally<a class="headerlink" href="#working-locally" title="Permalink to this headline">#</a></h2>
+<p>The exercises in this book were tested on Linux and compiled with both the gfortran5 and ifort compilers. We recommend you create a conda environment with:</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="01_0_Basics.html">1. Fortran</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test.html">2. Test2Test</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test2test.html">3. Testssss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="program.html">4. Program</a></li>
+    <li>fortls, the Fortran language server</li>
+    <li>gfortran, the GNU Fortran compiler</li>
 </ul>
+<p>You can also use our <span class="xref myst"><em><strong>fortran.yml</strong></em></span> file to create the same environment we used to test this book. Our test environment also includes python packages for visualising some exercise solutions and doxygen, a document generation package. If you’d like to use Intels ifort compiler you can download ifort from their <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/fortran-compiler.html#gs.l7v8o2">website</a>.</p>
+<p>We hope you enjoy learning Fortran using these resources. If you spot any errors or have ideas to improve the book please contact dt &#64; <a class="reference external" href="http://dt.com">dt.com</a>.</p>
+</section>
+<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="11_OOP.html">Object Orientated Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="testthis.html">Cheese Ball</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">References</a></li>
-</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </section>
 
@@ -381,16 +668,16 @@ Inspired by <span id="id1">[<a class="reference internal" href="bibliography.htm
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "fortran"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "fortran",
             path: "./docs"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'fortran'</script>
 
               </div>
               
@@ -399,10 +686,10 @@ Inspired by <span id="id1">[<a class="reference internal" href="bibliography.htm
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="01_0_Basics.html" title="next page">
+    <a class='right-next' id="next-link" href="00/basics.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Fortran</p>
+        <p class="prev-next-title">A Basic Program</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

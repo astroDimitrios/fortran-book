@@ -7,21 +7,33 @@ p {
     justify-content: center;
 }
 
+div.code-block-caption span.caption-number {
+    display: none;
+}
+
+div.code-block-caption span.caption-text {
+    font-weight: 700;
+}
+
+/* For the navbar colours etc: */
+
 #site-navigation .bd-sidebar__content {
     color: white;
-    background-color: #1d1d1d;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #2a2a2a;
 }
 
 #site-navigation h1.site-logo {
     color: white;
 }
 
-.caption-text {
+.bd-toc-item.caption.caption-text {
     color: white;
 }
 
 #site-navigation nav ul.nav li a, #site-navigation nav ul.nav ul li a {
     color: white;
+    color: rgba(255, 255, 255, 0.8);
     transition-duration: .5s;
 }
 
@@ -47,7 +59,7 @@ p {
 }
 
 .bd-sidebar label:hover {
-    background: #c4e90c;;
+    background: #c4e90c;
     transition-duration: .5s;
     transition-timing-function: ease-out;
 }
@@ -61,3 +73,22 @@ p {
     transition-duration: .5s;
     transition-timing-function: ease-out;
 }
+
+/* For the interactive admonition: */
+
+.admonition.interactive, div.admonition.interactive {
+    border-color: #288172;
+}
+
+.admonition.interactive > .admonition-title, div.admonition.interactive > .admonition-title {
+    background-color: #55c6b4;
+}
+
+.admonition.interactive > .admonition-title::before, div.admonition.interactive > .admonition-title::before {
+    /* content: url("data:image/svg+xml,%3Csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='16.000000pt' height='16.000000pt' viewBox='0 0 16.000000 16.000000' preserveAspectRatio='xMidYMid meet'%3E%3Cg transform='translate(0.000000 16.000000) scale(0.100000 -0.100000)'fill='%23000000' stroke='none'%3E%3Cpath d='M30 105 c-47 -49 -35 -69 44 -73 91 -5 115 34 52 82 -45 34 -55 33-96 -9z m94 1 c21 -18 26 -29 21 -45 -5 -18 -14 -21 -66 -21 -73 0 -84 16 -4360 34 36 50 37 88 6z'/%3E%3C/g%3E%3C/svg%3E"); */
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f135"; color: black;
+}
+
+/* .admonition.interactive > .admonition-title::after, div.admonition.interactive > .admonition-title::after {
+    content: url("https://www.astropython.com/images/APLogoNAV.svg");
+} */

@@ -2,8 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Introduction to Fortran
-author:  DT #The Met Office
-# logo: met-office-logo-black-on-white.png
+author:  DT
+logo: logo.png
 description: >-
   A brief introduction to Fortran, LFRic style.
 
@@ -26,9 +26,13 @@ bibtex_bibfiles:
   - docs/references.bib
 
 sphinx:
+  extra_extensions:
+    - sphinx_exercise
   config:
     language: en
+    hide_solutions: true
     html_show_copyright: false
+    # html_theme: furo
     bibtex_reference_style: author_year
     myst_heading_anchors : 3
     myst_html_meta : {
@@ -64,7 +68,7 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  # favicon               : favicon-dark.png
+  favicon               : favicon.ico
   baseurl               : https://www.astropython.com/fortran-book/index.html
   use_issues_button     : true
   use_repository_button : true
