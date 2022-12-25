@@ -13,6 +13,7 @@ execute:
   execute_notebooks: 'off'
 
 launch_buttons:
+  binderhub_url: https://mybinder.org
   notebook_interface: jupyterlab
   thebe: true
 
