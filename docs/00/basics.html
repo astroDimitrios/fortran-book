@@ -40,13 +40,10 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -370,7 +367,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/astroDimitrios/fortran-book/main?urlpath=lab/tree/docs/docs/00/basics.ipynb"
+        <a href="https://mybinder.org/v2/gh/astroDimitrios/fortran-book/main?urlpath=lab/tree/docs/00/basics.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -662,7 +659,23 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="a-basic-program">
+  <script type="text/x-thebe-config">
+{
+    requestKernel: true,
+    binderOptions: {
+        repo: "astroDimitrios/fortran-book",
+        ref: "main",
+        repoProvider: "github",
+        binderUrl: "https://mybinder.org",
+    },
+    kernelOptions: {
+        name: "fortran",
+        kernelName: "fortran",
+        path: ".",
+    },
+}
+</script>
+<script>kernelName = 'fortran'</script><section class="tex2jax_ignore mathjax_ignore" id="a-basic-program">
 <h1>A Basic Program<a class="headerlink" href="#a-basic-program" title="Permalink to this headline">#</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -707,15 +720,15 @@ title="Print to PDF"
 </div>
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9aabe169-4be3-4cbf-a219-cb267883b815" name="e21c6fce-3546-4f89-93f5-9ba4754a26a8" type="radio">
-</input><label class="sd-tab-label" for="9aabe169-4be3-4cbf-a219-cb267883b815">
+<input checked="checked" id="9f30ccab-33f6-49cf-a21a-9483ae7b93c6" name="0ec2c10b-39ad-442c-ae1c-f223118bd1dd" type="radio">
+</input><label class="sd-tab-label" for="9f30ccab-33f6-49cf-a21a-9483ae7b93c6">
 gfortran</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gfortran -o hello hello_world.f90
 </pre></div>
 </div>
 </div>
-<input id="c5a5e3e9-1a30-4927-9a9b-2fd1d85d7801" name="e21c6fce-3546-4f89-93f5-9ba4754a26a8" type="radio">
-</input><label class="sd-tab-label" for="c5a5e3e9-1a30-4927-9a9b-2fd1d85d7801">
+<input id="d4c5a2dd-27de-4ad0-98e0-38fbd78f4f7d" name="0ec2c10b-39ad-442c-ae1c-f223118bd1dd" type="radio">
+</input><label class="sd-tab-label" for="d4c5a2dd-27de-4ad0-98e0-38fbd78f4f7d">
 ifort</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifort -o hello hello_world.f90
 </pre></div>
@@ -724,16 +737,16 @@ ifort</label><div class="sd-tab-content docutils">
 </div>
 <p>And to run our program from the terminal:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="361c4953-508c-45a7-b2a5-58edd4786b94" name="0eb23c69-c156-47e6-9375-8c90982d0991" type="radio">
-</input><label class="sd-tab-label" for="361c4953-508c-45a7-b2a5-58edd4786b94">
+<input checked="checked" id="658ace8e-ccd0-4a2a-bb57-71aa6627090e" name="5ff61740-bb20-4c99-b9bf-ac94128bde50" type="radio">
+</input><label class="sd-tab-label" for="658ace8e-ccd0-4a2a-bb57-71aa6627090e">
 Linux</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt; ./hello
 Hello World!
 </pre></div>
 </div>
 </div>
-<input id="4e2e1681-e42e-4119-a9dc-a39d5e979f05" name="0eb23c69-c156-47e6-9375-8c90982d0991" type="radio">
-</input><label class="sd-tab-label" for="4e2e1681-e42e-4119-a9dc-a39d5e979f05">
+<input id="ba80de85-d392-485c-aa17-04d7f45b292b" name="5ff61740-bb20-4c99-b9bf-ac94128bde50" type="radio">
+</input><label class="sd-tab-label" for="ba80de85-d392-485c-aa17-04d7f45b292b">
 Windows</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt; hello.exe
 Hello World!
