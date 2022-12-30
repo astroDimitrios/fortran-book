@@ -114,10 +114,27 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="00/basics.html">
    A Basic Program
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00/types_kinds.html">
+     Types and Kinds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00/operators.html">
+     Operators
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="00/style.html">
@@ -128,8 +145,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="01/inout.html">
    Input and Output
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -155,8 +172,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="02/arraysandloops.html">
    Arrays and Loops
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -177,8 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="03/memmanage.html">
    Memory Management
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -206,8 +223,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="04/funcsandsubs.html">
    Functions and Subroutines
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -260,8 +277,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="05/derivedtypes.html">
    User Defined Types
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -610,7 +627,8 @@ title="Print to PDF"
 <h1>Introduction to Fortran<a class="headerlink" href="#introduction-to-fortran" title="Permalink to this headline">#</a></h1>
 <p>ADD MORE HELPFULL LINKS TO THIS PAGE<br />
 ADD MASTER TOC OR WEB TREE THING<br />
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude">https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude</a></p>
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude">https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude</a><br />
+BLOCK construct not inlcuded in Basic Program section yet, nor the DATA statement</p>
 <p>This book is designed to introduce you to the basics of modern <a class="reference external" href="https://fortran-lang.org/en/">Fortran</a> and good software engineering practices.
 It is heavily inspired by the work of Katherine Holcomb <span id="id1">[<a class="reference internal" href="bibliography.html#id2" title="Katherine Holcomb. Scientific programming in fortran 2003. https://wiki.uiowa.edu/download/attachments/109785161/fortran-novella-holcomb.pdf, 2008. Accessed: 2022/12/20.">Holcomb, 2008</a>]</span>.</p>
 <p>Fortran was created in 1957 by a team at IBM and excels with numerically intensive science code.
@@ -623,7 +641,7 @@ High Performance Computing (HPC).</p>
 </section>
 <section id="interactives">
 <h2>Interactives<a class="headerlink" href="#interactives" title="Permalink to this headline">#</a></h2>
-<p>The first few lessons in this book won’t require you to have fortran installed locally. Through the power of the open-source projects Jupyter and LFortran you can run Fortran in the browser.</p>
+<p>The first few lessons in this book won’t require you to have fortran installed locally, although the books exercises will. Through the power of the open-source projects Jupyter and LFortran you can run Fortran in the browser.</p>
 <p>Try it out:</p>
 <div class="admonition interactive">
 <p class="admonition-title">Interactive</p>

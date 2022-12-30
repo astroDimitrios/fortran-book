@@ -27,11 +27,10 @@ bibtex_bibfiles:
   - docs/references.bib
 
 sphinx:
-  extra_extensions:
-    - sphinx_exercise
+  extra_extensions: [sphinx_exercise, sphinx_togglebutton]
   config:
     language: en
-    hide_solutions: true
+    hide_solutions: false
     html_show_copyright: false
     # html_theme: furo
     bibtex_reference_style: author_year

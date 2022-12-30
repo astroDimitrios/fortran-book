@@ -9,6 +9,9 @@ parts:
   - caption: Fundamentals
     chapters:
     - file: docs/00/basics
+      sections:
+      - file: docs/00/types_kinds
+      - file: docs/00/operators
     - file: docs/00/style
     - file: docs/01/inout
       sections:
