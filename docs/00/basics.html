@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Code Style" href="style.html" />
+    <link rel="next" title="Types and Kinds" href="types_kinds.html" />
     <link rel="prev" title="Introduction to Fortran" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -115,10 +115,27 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    A Basic Program
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="types_kinds.html">
+     Types and Kinds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operators.html">
+     Operators
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="style.html">
@@ -129,8 +146,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../01/inout.html">
    Input and Output
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -156,8 +173,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02/arraysandloops.html">
    Arrays and Loops
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -178,8 +195,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../03/memmanage.html">
    Memory Management
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -207,8 +224,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04/funcsandsubs.html">
    Functions and Subroutines
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -261,8 +278,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05/derivedtypes.html">
    User Defined Types
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -548,38 +565,14 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types">
-   Types
+  <a class="reference internal nav-link" href="#summary">
+   Summary
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#declaring-variables">
-   Declaring Variables
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implicit-none">
-     implicit none
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assigning-variables">
-   Assigning Variables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parameters">
-     Parameters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#character-type">
-     Character Type
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -616,38 +609,14 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types">
-   Types
+  <a class="reference internal nav-link" href="#summary">
+   Summary
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#declaring-variables">
-   Declaring Variables
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implicit-none">
-     implicit none
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assigning-variables">
-   Assigning Variables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parameters">
-     Parameters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#character-type">
-     Character Type
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -679,28 +648,18 @@ title="Print to PDF"
 <h1>A Basic Program<a class="headerlink" href="#a-basic-program" title="Permalink to this headline">#</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id6">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#compiling" id="id7">Compiling</a></p></li>
-<li><p><a class="reference internal" href="#comments" id="id8">Comments</a></p></li>
-<li><p><a class="reference internal" href="#types" id="id9">Types</a></p></li>
-<li><p><a class="reference internal" href="#declaring-variables" id="id10">Declaring Variables</a></p>
-<ul>
-<li><p><a class="reference internal" href="#implicit-none" id="id11">implicit none</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#assigning-variables" id="id12">Assigning Variables</a></p>
-<ul>
-<li><p><a class="reference internal" href="#parameters" id="id13">Parameters</a></p></li>
-<li><p><a class="reference internal" href="#character-type" id="id14">Character Type</a></p></li>
-</ul>
-</li>
+<li><p><a class="reference internal" href="#introduction" id="id4">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#compiling" id="id5">Compiling</a></p></li>
+<li><p><a class="reference internal" href="#comments" id="id6">Comments</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id7">Summary</a></p></li>
+<li><p><a class="reference internal" href="#exercises" id="id8">Exercises</a></p></li>
 </ul>
 </div>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id6">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>Fortran files have the extension <strong>.f90</strong> <a class="footnote-reference brackets" href="#id3" id="id1">1</a> and begin with the <code class="docutils literal notranslate"><span class="pre">program</span></code> keyword. They end with the corresponding <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">program</span></code> keywords. It is good practice to label your program, for instance below is a Fortran program called <em><strong>hello_world</strong></em> inside the file <em><strong>hello_world.f90</strong></em>.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">hello_world.f90</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
+<h2><a class="toc-backref" href="#id4">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>Fortran files have the extension <strong>.f90</strong> <a class="footnote-reference brackets" href="#id2" id="id1">1</a> and begin with the <code class="docutils literal notranslate"><span class="pre">program</span></code> keyword. They end with the corresponding <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">program</span></code> keywords. It is good practice to label your program, for instance below is a Fortran program called <em><strong>hello_world</strong></em> inside the file <em><strong>hello_world.f90</strong></em>.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">hello_world.f90</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">hello_world</span><span class="w"></span>
 <span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Hello World!&#39;</span><span class="w"></span>
 <span class="k">end program </span><span class="n">hello_world</span><span class="w"></span>
@@ -710,7 +669,7 @@ title="Print to PDF"
 <p>Fortran is case <em><strong>insensitive</strong></em>, this book will use lowercase as part of its <span class="xref myst">style</span>. Notice the indented <code class="docutils literal notranslate"><span class="pre">print</span></code> keyword, the Fortran standard doesn’t include tabs so the indentation is four spaces for each level.</p>
 </section>
 <section id="compiling">
-<h2><a class="toc-backref" href="#id7">Compiling</a><a class="headerlink" href="#compiling" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id5">Compiling</a><a class="headerlink" href="#compiling" title="Permalink to this headline">#</a></h2>
 <p>Fortran is a compiled language. To compile our <em><strong>hello_world.f90</strong></em> program we can use the following commands:</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -720,15 +679,15 @@ title="Print to PDF"
 </div>
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9f30ccab-33f6-49cf-a21a-9483ae7b93c6" name="0ec2c10b-39ad-442c-ae1c-f223118bd1dd" type="radio">
-</input><label class="sd-tab-label" for="9f30ccab-33f6-49cf-a21a-9483ae7b93c6">
+<input checked="checked" id="afdfe0d7-3c4d-4ce2-b520-5e2c02f19394" name="e2928185-e14b-4160-a2c4-81cb56558bf7" type="radio">
+</input><label class="sd-tab-label" for="afdfe0d7-3c4d-4ce2-b520-5e2c02f19394">
 gfortran</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gfortran -o hello hello_world.f90
 </pre></div>
 </div>
 </div>
-<input id="d4c5a2dd-27de-4ad0-98e0-38fbd78f4f7d" name="0ec2c10b-39ad-442c-ae1c-f223118bd1dd" type="radio">
-</input><label class="sd-tab-label" for="d4c5a2dd-27de-4ad0-98e0-38fbd78f4f7d">
+<input id="d2317eeb-976c-4f95-a651-338367010a1c" name="e2928185-e14b-4160-a2c4-81cb56558bf7" type="radio">
+</input><label class="sd-tab-label" for="d2317eeb-976c-4f95-a651-338367010a1c">
 ifort</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifort -o hello hello_world.f90
 </pre></div>
@@ -737,16 +696,16 @@ ifort</label><div class="sd-tab-content docutils">
 </div>
 <p>And to run our program from the terminal:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="658ace8e-ccd0-4a2a-bb57-71aa6627090e" name="5ff61740-bb20-4c99-b9bf-ac94128bde50" type="radio">
-</input><label class="sd-tab-label" for="658ace8e-ccd0-4a2a-bb57-71aa6627090e">
+<input checked="checked" id="a2b764b3-9e3e-4be7-a348-2c930e27f2cb" name="a356e3fd-f748-46df-b451-ee1590ec9067" type="radio">
+</input><label class="sd-tab-label" for="a2b764b3-9e3e-4be7-a348-2c930e27f2cb">
 Linux</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt; ./hello
 Hello World!
 </pre></div>
 </div>
 </div>
-<input id="ba80de85-d392-485c-aa17-04d7f45b292b" name="5ff61740-bb20-4c99-b9bf-ac94128bde50" type="radio">
-</input><label class="sd-tab-label" for="ba80de85-d392-485c-aa17-04d7f45b292b">
+<input id="d4a961cf-3fe4-4046-956f-69ded6b10cab" name="a356e3fd-f748-46df-b451-ee1590ec9067" type="radio">
+</input><label class="sd-tab-label" for="d4a961cf-3fe4-4046-956f-69ded6b10cab">
 Windows</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt; hello.exe
 Hello World!
@@ -754,6 +713,20 @@ Hello World!
 </div>
 </div>
 </div>
+</section>
+<section id="comments">
+<h2><a class="toc-backref" href="#id6">Comments</a><a class="headerlink" href="#comments" title="Permalink to this headline">#</a></h2>
+<p>Comments in Fortran are declared with an <code class="docutils literal notranslate"><span class="pre">!</span></code>:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">! This is a comment</span>
+</pre></div>
+</div>
+<p>As you work through the exercises in this book make sure you comment your code! Generating full documentation for your code will be explored in the <span class="xref myst">Doxygen</span> section.</p>
+</section>
+<section id="summary">
+<h2><a class="toc-backref" href="#id7">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="exercises">
+<h2><a class="toc-backref" href="#id8">Exercises</a><a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
 <p>Cards like the one below describe your next exercise and are normally followed by a solution card. These exercises are intended to be coded on your local machine and compiled. Have a go at your first exercise, building the hello world program and running it.</p>
 <div class="exercise admonition" id="ex1">
 
@@ -768,119 +741,15 @@ Hello World!
 </ul>
 </section>
 </div>
-</section>
-<section id="comments">
-<h2><a class="toc-backref" href="#id8">Comments</a><a class="headerlink" href="#comments" title="Permalink to this headline">#</a></h2>
-<p>Comments in Fortran are declared with an <code class="docutils literal notranslate"><span class="pre">!</span></code>:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">! This is a comment</span>
-</pre></div>
-</div>
-<p>As you work through the exercises in this book make sure you comment your code! Generating full documentation for your code will be explored in the <span class="xref myst">Doxygen</span> section.</p>
-</section>
-<section id="types">
-<h2><a class="toc-backref" href="#id9">Types</a><a class="headerlink" href="#types" title="Permalink to this headline">#</a></h2>
-<p>There are five types in Fortran. They are:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Type</p></th>
-<th class="head"><p>example</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>integer</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>real (float)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code> or <code class="docutils literal notranslate"><span class="pre">1.2d-11</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>character</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'text'</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>complex</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">1.0,</span> <span class="pre">1.0</span> <span class="pre">)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>logical</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">.true.</span></code> or <code class="docutils literal notranslate"><span class="pre">.false</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="declaring-variables">
-<h2><a class="toc-backref" href="#id10">Declaring Variables</a><a class="headerlink" href="#declaring-variables" title="Permalink to this headline">#</a></h2>
-<p>Variables can be declared using the <code class="docutils literal notranslate"><span class="pre">::</span></code> syntax:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w">        </span><span class="c">! simple counters for looping</span>
-<span class="kt">real</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">my_height</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Here we declared two integer variables, then a real variable. Notice how the <code class="docutils literal notranslate"><span class="pre">::</span></code> are aligned for readability. Variables names can contain letters, numbers, and <code class="docutils literal notranslate"><span class="pre">_</span></code> only. They must start with a letter.</p>
-<section id="implicit-none">
-<h3><a class="toc-backref" href="#id11">implicit none</a><a class="headerlink" href="#implicit-none" title="Permalink to this headline">#</a></h3>
-<p>Fortran assumes that the single character variables i through n will be used for counting during loops and automatically declares them as integer types. It is good practice in modern Fortran to declare <code class="docutils literal notranslate"><span class="pre">implicit</span> <span class="pre">none</span></code> at the start of all programs, modules, functions, and subroutines to supress this behaviour.</p>
-</section>
-</section>
-<section id="assigning-variables">
-<h2><a class="toc-backref" href="#id12">Assigning Variables</a><a class="headerlink" href="#assigning-variables" title="Permalink to this headline">#</a></h2>
-<p>Variables can be assigned when they are declared however it is best practice to assign a value with a new statement for instance:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w">        </span><span class="c">! simple counters for looping</span>
-<span class="kt">real</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">my_height</span><span class="w"></span>
-
-<span class="n">i</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="n">my</span><span class="o">-</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="mf">4.7</span><span class="w"></span>
-</pre></div>
-</div>
-<section id="parameters">
-<h3><a class="toc-backref" href="#id13">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h3>
-<p>Parameters are variables with a fixed value that cannot be changed. Parameters must be declared with their value:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">real</span><span class="w">                    </span><span class="kd">::</span><span class="w"> </span><span class="n">earth_radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6371000</span><span class="w"></span>
-<span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">earth_radius_unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;m&#39;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>They are often used, as in the example above, for physical constants.</p>
-</section>
-<section id="character-type">
-<h3><a class="toc-backref" href="#id14">Character Type</a><a class="headerlink" href="#character-type" title="Permalink to this headline">#</a></h3>
-<p>Characters are declared with a length variable. This allocates the correct amount of memory for the string length. If the string is shorter than the declared length it will be padded with spaces. If the string is longer than the declared length it will be cut to the declared length.</p>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="note admonition">
-<p class="admonition-title">trim()</p>
-<p>When printing a character type the <code class="docutils literal notranslate"><span class="pre">trim()</span></code> command will remove any trailing whitespaces.</p>
-</div>
-</aside>
-<div class="admonition interactive">
-<p class="admonition-title">Interactive</p>
-<div>
-        <p>
-            Make sure you have [activated interactivity]() on this page.
-        </p>
-        <ul>
-            <li>Run the code as is, what does it do?</li>
-            <li>Change the assigned string <code>'Voyager'</code> to <code>'Enterprise'</code>, what happens to the stored string?</li>
-            <li>Keeping the <code>'Enterprise'</code> string change the <code>len=7</code> command to <code>`len=*`</code> or simply to <code>`*`</code>, what happens to the stored string?</li>
-        </ul>
-    </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">space_ship</span><span class="w"></span>
-<span class="n">space_ship</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Voyager&#39;</span><span class="w"></span>
-<span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">space_ship</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">*</span></code> length declaration tells Fortran to automatically calculate the required length on assignment. <a class="footnote-reference brackets" href="#id4" id="id2">2</a></p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Fortran files can have other <a class="reference external" href="https://fortranwiki.org/fortran/show/File+extensions">extensions</a>, <strong>.f90</strong> is used to denote free-form Fortran which removed fixed form restrictions such as the line width being constrained to 72 columns, for more see <span class="xref myst">Free vs. Fixed Format</span>. Fixed form Fortran is denoted by the <strong>.f</strong> and <strong>.for</strong> extensions. If a Fortran file requires preprocessing use a capital F in the extension, <strong>.F90</strong>. For more see the <span class="xref myst">preprocessing section</span> of this book.</p>
-</dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>The length can also be automatically calculated on allocation <code class="docutils literal notranslate"><span class="pre">character(len=:),</span> <span class="pre">allocatable</span> <span class="pre">::</span> <span class="pre">c</span></code>, see <span class="xref myst">memory management</span> for information on allocatables.</p>
 </dd>
 </dl>
 </section>
-</section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -917,10 +786,10 @@ Hello World!
             <p class="prev-next-title">Introduction to Fortran</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="style.html" title="next page">
+    <a class='right-next' id="next-link" href="types_kinds.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Code Style</p>
+        <p class="prev-next-title">Types and Kinds</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

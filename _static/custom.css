@@ -15,6 +15,16 @@ div.code-block-caption span.caption-text {
     font-weight: 700;
 }
 
+/* Turn off the 'click here to show' text on solution dropdown */
+button.toggle-button.toggle-button-hidden::before {
+    display: none;
+}
+
+/* Admonition pad top so dropdown toggle buttom is away from edge */
+.toggle.admonition button.toggle-button {
+    margin-top: 0.4em;
+}
+
 /* For the navbar colours etc: */
 
 #site-navigation .bd-sidebar__content {
