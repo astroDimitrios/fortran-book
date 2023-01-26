@@ -1,0 +1,876 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Fortran training materials" lang="en" name="description" xml:lang="en" />
+<meta content="Fortran, Learn, Code, Training" name="keywords" />
+<meta content="en_UK" property="og:locale" />
+
+    <title>Parareal &#8212; Introduction to Fortran</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://www.astropython.com/fortran-book/index.html/docs/Intro_to_parareal.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Input and Output" href="01/inout.html" />
+    <link rel="prev" title="Code Style" href="00/style.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Alpha - Building in Progress</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Fortran</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentals
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="00/basics.html">
+   A Basic Program
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00/types_kinds.html">
+     Types and Kinds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00/operators.html">
+     Operators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00/style.html">
+   Code Style
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Parareal
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="01/inout.html">
+   Input and Output
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01/out.html">
+     Output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01/in.html">
+     Input
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01/namelist.html">
+     Namelists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02/arraysandloops.html">
+   Arrays and Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02/arrays.html">
+     Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02/loops.html">
+     Loops and Conditionals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03/memmanage.html">
+   Memory Management
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03/allocarrays.html">
+     Allocatable Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03/pointers.html">
+     Pointers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Functions and Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="04/funcsandsubs.html">
+   Functions and Subroutines
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04/functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04/subroutines.html">
+     Subroutines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04/arrayargs.html">
+     Arrays as Arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04/clargs.html">
+     Command Line Arguments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04/modules.html">
+   Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04/overload.html">
+   Overloading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04/exceptions.html">
+   Exceptions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  OOP
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05/derivedtypes.html">
+   User Defined Types
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05/dtypes.html">
+     Derived Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05/pdtypes.html">
+     Parameterised DTypes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05/oop.html">
+   Object Orientated Fortran
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="06/coarray.html">
+   Coarrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06/doxygen.html">
+   Doxygen
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/astroDimitrios/fortran-book/main?urlpath=lab/tree/docs/Intro_to_parareal.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/astroDimitrios/fortran-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/astroDimitrios/fortran-book/issues/new?title=Issue%20on%20page%20%2Fdocs/Intro_to_parareal.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/docs/Intro_to_parareal.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Parareal
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Parareal</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Parareal
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="parareal">
+<h1>Parareal<a class="headerlink" href="#parareal" title="Permalink to this headline">#</a></h1>
+<p>To solve the initial value problem
+$<span class="math notranslate nohighlight">\( u_t = f(t, u), \quad t \in (0, T], // u(0) &amp;= u^0 \)</span>$</p>
+<p>using the parareal algorithm, we require two integrators or propagators:
+\begin{enumerate}
+\item <span class="math notranslate nohighlight">\(G(t, u)\)</span> is a coarse approximation
+\item <span class="math notranslate nohighlight">\(F(t, u)\)</span> is a more accurate, or fine, approximation
+\end{enumerate}</p>
+<p>We partition the time domain into intervals (time-slices, or chunks) and use the coarse approximation <span class="math notranslate nohighlight">\(G\)</span> to give us an initial condition for <span class="math notranslate nohighlight">\(F\)</span> on each interval.</p>
+<p>The more accurate (i.e. \textit{expensive!}) approximation can now be computed in parallel for all slices at once, although obviously the later time slices do not have an accurate initial condition.</p>
+<p>We iterate, correcting the initial condition on each interval:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    u_0^{k+1} &amp;= u^0 \\
+    u_{n+1}^{k+1} &amp;= F(u_n^k) + G(u_n^{k+1}) - G(u_n^k)
+  \end{align*}\]</div>
+<p>my notes:</p>
+<div class="math notranslate nohighlight">
+\[F(u_n^k) = u^{k}_{n+1}\]</div>
+<p>Which is the last fine step value at the <span class="math notranslate nohighlight">\(n+1\)</span> grid point.</p>
+<p>We will first apply parareal to the Lorenz63 chaotic system, using an RK4 method for both the coarse and the fine propagators. The coarse propagator will take a larger timestep than the fine. There are functions provided below to compute the right hand side of the Lorenz system and a single RK4 timestep.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lorenz63</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">8</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mi">28</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given:</span>
+<span class="sd">       X: a point of interest in three dimensional space</span>
+<span class="sd">       sigma, rho, beta: parameters defining the lorenz attractor</span>
+<span class="sd">    Returns:</span>
+<span class="sd">       x_dot, y_dot, z_dot: values of the lorenz attractor&#39;s partial</span>
+<span class="sd">           derivatives at the point x, y, z</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">X</span>
+    <span class="n">xdot</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">ydot</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">rho</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span> 
+    <span class="n">zdot</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="n">beta</span><span class="o">*</span><span class="n">z</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xdot</span><span class="p">,</span> <span class="n">ydot</span><span class="p">,</span> <span class="n">zdot</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rk4</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">f_kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A single timestep for rhs function f using RK4</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">**</span><span class="n">f_kwargs</span><span class="p">)</span>  
+
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">x1</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">**</span><span class="n">f_kwargs</span><span class="p">)</span>
+    <span class="n">x3</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">x2</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">**</span><span class="n">f_kwargs</span><span class="p">)</span>
+    <span class="n">x4</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">x3</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span> <span class="o">**</span><span class="n">f_kwargs</span><span class="p">)</span>
+    <span class="n">x_out</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dt</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x3</span> <span class="o">+</span> <span class="n">x4</span><span class="p">)</span><span class="o">/</span><span class="mf">6.0</span>
+    <span class="k">return</span> <span class="n">x_out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will reproduce the results from Gander and Hairer 2007. The initial condition and timesteps are given below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initial condition</span>
+<span class="n">X0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">]])</span>
+
+<span class="c1"># final time</span>
+<span class="n">t_max</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># total number of coarse timesteps</span>
+<span class="n">Nc</span> <span class="o">=</span> <span class="mi">180</span>
+
+<span class="c1"># coarse timestep</span>
+<span class="n">Dt</span> <span class="o">=</span> <span class="n">t_max</span><span class="o">/</span><span class="n">Nc</span>
+
+<span class="c1"># total number of fine timesteps</span>
+<span class="n">total_Nf</span> <span class="o">=</span> <span class="mi">80</span> <span class="o">*</span> <span class="n">Nc</span> 
+
+<span class="c1"># number of fine timesteps per coarse timestep</span>
+<span class="n">Nf</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">total_Nf</span><span class="o">/</span><span class="n">Nc</span><span class="p">)</span>
+
+<span class="c1"># fine timestep</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">t_max</span><span class="o">/</span><span class="n">total_Nf</span>
+
+<span class="n">rhs</span> <span class="o">=</span> <span class="n">lorenz63</span>
+
+<span class="n">Xc_old</span> <span class="o">=</span> <span class="n">X0</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># compute the first iteration using the coarse propagator</span>
+<span class="c1">#### FILL THIS IN</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nc</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">Xc_old</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span> <span class="n">Xc_old</span><span class="p">,</span> <span class="p">(</span><span class="n">rk4</span><span class="p">(</span> <span class="n">Dt</span><span class="p">,</span> <span class="n">Xc_old</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">rhs</span><span class="p">))[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="p">))</span>
+
+<span class="c1"># plt.plot(np.linspace(0, t_max, num=Nc), Xc_old[:, 0])</span>
+
+<span class="c1"># number of iterations</span>
+<span class="n">nits</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="n">Xc_n</span> <span class="o">=</span> <span class="n">Xc_old</span>
+<span class="n">Xf_on_c</span> <span class="o">=</span> <span class="n">Xc_n</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">Xf_all</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># now write an iteration loop using the coarse propagator as an initial condition for</span>
+<span class="c1"># the fine propagator on each time interval</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nits</span><span class="p">):</span>
+    <span class="c1">### FILL THIS IN</span>
+    
+    <span class="n">Xc_old</span> <span class="o">=</span> <span class="n">Xc_n</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nc</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">Xf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">Xc_old</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+    
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nf</span><span class="p">):</span>
+            <span class="n">Xf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span> <span class="n">Xf</span><span class="p">,</span> <span class="p">(</span><span class="n">rk4</span><span class="p">(</span> <span class="n">dt</span><span class="p">,</span> <span class="n">Xf</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">rhs</span><span class="p">))))</span>
+        <span class="n">Xf_on_c</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Xf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+        <span class="c1"># if last iteration get all fine timesteps</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="p">(</span><span class="n">nits</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">Xf_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Xf</span><span class="p">)</span>           
+    
+    <span class="c1"># Now compute the corrections</span>
+    <span class="c1"># k index is Xc_old</span>
+    <span class="c1"># k+1 index is Xc_n</span>
+    <span class="c1"># Xf_on_c is the fine timestep for iteration k</span>
+    <span class="c1"># - only those final f values which corr to a course timestep</span>
+    <span class="c1"># i = n?</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nc</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">Xc_n</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Xf_on_c</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">rk4</span><span class="p">(</span> <span class="n">Dt</span><span class="p">,</span> <span class="n">Xc_n</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">rhs</span> <span class="p">)</span> <span class="o">-</span> <span class="n">rk4</span><span class="p">(</span> <span class="n">Dt</span><span class="p">,</span> <span class="n">Xc_old</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">rhs</span> <span class="p">)</span>
+    
+<span class="c1"># plt.plot(np.linspace(0, t_max, num=Nc), Xc_n[:, 0])</span>
+<span class="c1"># plt.plot(np.linspace(0, t_max, num=Nc), Xc_n[:, 1])</span>
+<span class="c1"># plt.plot(np.linspace(0, t_max, num=Nc), Xc_n[:, 2])</span>
+
+<span class="c1"># stack list with all finetimesteps</span>
+<span class="n">Xf_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">Xf_all</span><span class="p">))</span>
+
+<span class="c1"># ax = plt.figure().add_subplot(projection=&#39;3d&#39;)</span>
+<span class="c1"># ax.plot(*Xf_all.T, lw=0.5)</span>
+<span class="c1"># ax.set_xlabel(&quot;X Axis&quot;)</span>
+<span class="c1"># ax.set_ylabel(&quot;Y Axis&quot;)</span>
+<span class="c1"># ax.set_zlabel(&quot;Z Axis&quot;)</span>
+<span class="c1"># ax.set_title(&quot;Lorenz Attractor with Parareal&quot;)</span>
+<span class="c1"># plt.show()</span>
+
+<span class="c1"># plt.savefig(&#39;Lorentz-Parareal-Iter6-180c-14400f-3D-FineSteps.png&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Intro_to_parareal_6_0.png" src="../_images/Intro_to_parareal_6_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will now investigate the behaviour of parareal applied to the Dahlquist equation.</p>
+</section>
+<section id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<ol class="simple">
+<li><p>Apply parareal to the Dahlquist equation with <span class="math notranslate nohighlight">\(\lambda=-1\)</span> and initial condition <span class="math notranslate nohighlight">\(x=1\)</span>. Run until <span class="math notranslate nohighlight">\(t=1\)</span> and use 10 coarse timesteps and 20 fine timesteps per coarse timestep.</p></li>
+<li><p>Now set <span class="math notranslate nohighlight">\(\lambda=2i\)</span> so that the solution is oscillatory. Investigate the effect of changing the coarse timestep - when does the solution converge?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dahlquist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lamda</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">lamda</span><span class="o">*</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rk4</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">f_kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">dt</span><span class="o">*</span><span class="n">lamda</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exact_soln</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">lamda</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">lamda</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "astroDimitrios/fortran-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="00/style.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Code Style</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="01/inout.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Input and Output</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By DT<br/>
+  
+    <div class="extra_footer">
+      <p>
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+</p>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
