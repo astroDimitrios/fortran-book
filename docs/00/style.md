@@ -7,7 +7,8 @@
 Having a consistent code style improves readability and makes collaboration easier. This book follows the code style outlined below; if your organisation has its own code style then use it! Some of the style relates to topics you haven't seen in this book yet. Best practice and code styling will be pointed out in future lessons.
 
 INC SHORT EXAMPLE?  
-DO WE WANT A STYLE ADMONITION?
+DO WE WANT A STYLE ADMONITION?  
+INCLUDE STYLIST INFO <https://github.com/MetOffice/stylist>
 
 ## Basics
 
